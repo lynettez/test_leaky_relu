@@ -1,0 +1,22 @@
+name: "YOLONet"
+input: "data"
+input_shape {
+  dim: 1
+  dim: 52
+  dim: 52
+  dim: 128
+}
+layer {
+  name: "cp1"
+  bottom: "data"
+  top: "cp1"
+}
+layer {
+  name: "relu1"
+  type: "ReLU"
+  bottom: "cp1"
+  top: "relu1"
+  relu_param{
+  negative_slope: 0.1
+  }		
+}
